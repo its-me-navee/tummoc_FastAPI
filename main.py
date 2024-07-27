@@ -152,3 +152,11 @@ async def calculate_distance(coords: Coordinates):
     distance = sqrt(lat_diff**2 + lon_diff**2)
     return {"distance": distance}
 
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        app, 
+        host="0.0.0.0", 
+        port=int(os.environ.get("PORT", 8000)),
+        log_level="info"
+    )
